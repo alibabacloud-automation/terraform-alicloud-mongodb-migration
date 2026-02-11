@@ -12,9 +12,9 @@ This example creates:
 - An ECS instance for running the migration script
 - ECS commands and invocations for automated migration setup
 
-## Usage
+## Update
 
-1. Set the required variables in `terraform.tfvars`:
+Set the required variables in `terraform.tfvars`:
 
 ```hcl
 # Required variables
@@ -29,15 +29,18 @@ vswitch_cidr_block  = "192.168.1.0/24"
 mongodb_instance_class = "mdb.shard.2x.xlarge.d"
 ```
 
-2. Initialize and apply the configuration:
+## Usage
+
+To run this example you need to execute:
 
 ```bash
-terraform init
-terraform plan
-terraform apply
+$ terraform init
+$ terraform plan
+$ terraform apply
+$ terraform destroy
 ```
 
-3. After successful deployment, the ECS instance will automatically execute the migration script to set up the MongoDB migration environment.
+Note that this example may create resources which cost money. Run `terraform destroy` when you don't need these resources.
 
 ## Notes
 
